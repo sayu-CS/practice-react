@@ -1,7 +1,14 @@
 import ExpenseItem from "./components/ExpenseItem";
 import NewExpense from "./components/NewExpense/NewExpense";
 
+import React from "react";
+
 function App() {
+
+const getDataHandler = (data) => {
+  console.log(data)
+};
+
   const expenses = [{
     id: '1',
     title: 'Toilet Paper',
@@ -17,10 +24,11 @@ function App() {
 
   return (
     <div>
-      <NewExpense />
-      <ExpenseItem title={expenses[0].title} amount={expenses[0].amount} date={expenses[0].date}></ExpenseItem>
-     <hr></hr>
-      <ExpenseItem title={expenses[1].title} amount={expenses[1].amount} date={expenses[1].date}></ExpenseItem>
+      <NewExpense onDataPassed={getDataHandler} />
+      {expenses.map(expense => 
+      <ExpenseItem title={expense.title} 
+      amount={expense.amount} 
+      date={expense.date}/>)}
     </div>
 
   );
