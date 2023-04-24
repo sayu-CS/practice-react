@@ -1,3 +1,4 @@
+import Movie from "./Movie";
 import ExpenseItem from "./components/ExpenseItem";
 import NewExpense from "./components/NewExpense/NewExpense";
 
@@ -38,6 +39,7 @@ return [data, ...prev]
       title={expense.title} 
       amount={expense.amount} 
       date={expense.date}/>)}
+      <Movie />
     </div>
 
   );
